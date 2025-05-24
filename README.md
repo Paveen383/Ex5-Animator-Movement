@@ -32,27 +32,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public Animator animator;
-    public float InputX;
-    public float InputY;
+    public float inputX;
+    public float inputY;
     // Start is called before the first frame update
     void Start()
     {
-        animator = this.gameObject.GetComponent < Animator>();
+        animator = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        InputY = Input.GetAxis("Vertical");
-        InputX = Input.GetAxis("Horizontal");
-        animator.SetFloat("InputY", InputY);
-        animator.SetFloat("InputX", InputX);
+        inputX = Input.GetAxis("Horizontal");
+        animator.SetFloat("inputX", inputX);
+        inputY = Input.GetAxis("Vertical");
+        animator.SetFloat("inputY", inputY);
     }
 }
-
 ```
 ## Output:
 ![Screenshot 2025-05-24 152346](https://github.com/user-attachments/assets/bd3fc169-1500-46af-933b-cd666e947876)
